@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,12 +12,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Brando's Website</title>
   </head>
-  <body class="flex flex-col w-full h-full items-center bg-emerald-100 ">
+  <body class="flex flex-col w-full h-full items-center bg-emerald-100">
     <nav class="fixed w-full h-20 bg-emerald-500 top-0 left-0 z-10">
       <ul
         class="flex flex-row items-center w-full h-full justify-evenly text-xl text-black"
       >
         <li><a href="#">Brando Bogar</a></li>
+
         <li><a href="/#about">About</a></li>
         <li><a href="/#experiences">Experiences</a></li>
         <li><a href="/#education">Education</a></li>
@@ -402,11 +405,13 @@
       >
         <h1 class="text-3xl underline">INTEREST</h1>
         <div class="flex flex-row w-full h-screen items-center justify-around">
-          <div class="bg-white h-full w-1/2 flex justify-center items-center p-8 rounded-3xl scale-75">
+          <div
+            class="bg-white h-full w-1/2 flex justify-center items-center p-8 rounded-3xl scale-75"
+          >
             <img
               src="/assets/images/music-interest.jpg"
               alt="mcth-band"
-              class="object-scale-down rounded-3xl "
+              class="object-scale-down rounded-3xl"
             />
           </div>
           <div class="h-full w-1/2 flex justify-center items-center">
@@ -422,7 +427,22 @@
         class="flex flex-col justify-evenly items-center h-screen w-full"
       >
         <h1 class="text-3xl underline">AWARDS</h1>
-        <p class="text-4xl text-black">Awards is going to achieve</p>
+        <ul class="text-2xl text-black list-disc flex gap-10 flex-col">
+          <li>Cloud Computing by Dicoding</li>
+          <li>Artificial Intellegence by Huawei</li>
+        </ul>
+        <div><p class="text-2xl uppercase ">biggest award is incoming</p></div>
+        <div class="dot-spinner">
+          
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+        </div>
       </div>
 
       <footer
@@ -443,8 +463,3 @@
   </body>
   <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
 </html>
-
-<!-- !! Experience interest deng awards  -->
-<!-- ?? Experience tambah project2 -->
-<!--  ?? interest tambah foto main torang 4 -->
-<!-- ?? awards  -->
