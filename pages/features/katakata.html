@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>KATAKATA</title>
+  </head>
+  
+  <body class="flex flex-col w-full h-full items-center bg-emerald-100">
+    <nav class="fixed w-full h-20 bg-emerald-500 top-0 left-0 z-10">
+      <ul
+        class="flex flex-row items-center w-full h-full justify-evenly text-xl text-black"
+      >
+        <li><a href="/#">Brando Bogar</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#experiences">Experiences</a></li>
+        <li><a href="/#education">Education</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#interest">Interests</a></li>
+        <li><a href="/#awards">Awards</a></li>
+        <li>
+          <button
+            id="dropdownNavbarLink"
+            data-dropdown-toggle="dropdownNavbar"
+            class="flex items-center justify-between w-full py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+          >
+            Features
+            <svg
+              class="w-5 h-5 ml-1"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownNavbar"
+            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+          >
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-400"
+              aria-labelledby="dropdownLargeButton"
+            >
+              <li>
+                <a
+                  href="/pages/features/discoword.html"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Disco Word</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/features/katakata.html"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >KATAKATA</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="w-full h-screen flex flex-col justify-center items-center">
+    <form class="flex flex-col justify-start items-center w-1/2">
+      <div class="flex flex-col justify-center items-center gap-5 " >
+        <div class="flex flex-col">
+          <label>Kata</label>
+          <input placeholder="Input kata" type="text" id="kata" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
+        </div>
+        <div class="flex flex-col">
+          
+          <label>Berapa</label>
+          <input placeholder="Jumlah cetak" type="number" id="angka" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"/>
+        </div>
+      </div>
+      <div class="mt-10 flex flex-row justify-center items-center w-full">
+        <button type="button" onclick="cetak()" class="bg-teal-500 text-white active:bg-teal-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Cetak</button>
+        <button onclick="clear()" class="bg-rose-500 text-white active:bg-rose-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Clear</button>
+      </div>
+    </form>
+
+    <ol id="list" class="list-decimal"></ol>
+    </div>
+
+    <script>
+      // const nama_variabel= document.getElementById("nama_variabel")
+
+      function cetak() {
+        const list = document.getElementById("list");
+        const kata = document.getElementById("kata").value;
+        const angka = document.getElementById("angka").value;
+
+        for (let i = 0; i < angka; i++) {
+          list.innerHTML = list.innerHTML + `<li>${kata}</li  >`;
+          //   document.write(`<h1>${kata}</h1>`);
+        }
+      }
+
+      function clear() {
+        const kosong = document.getElementById("list");
+        kosong.remove();
+      }
+    </script>
+  </body>
+  <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+</html>

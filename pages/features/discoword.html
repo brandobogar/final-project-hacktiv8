@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Disco Word</title>
+  </head>
+  <body class="flex flex-col w-full h-full items-center bg-emerald-100">
+    <nav class="fixed w-full h-20 bg-emerald-500 top-0 left-0 z-10">
+      <ul
+        class="flex flex-row items-center w-full h-full justify-evenly text-xl text-black"
+      >
+        <li><a href="/#">Brando Bogar</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#experiences">Experiences</a></li>
+        <li><a href="/#education">Education</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#interest">Interests</a></li>
+        <li><a href="/#awards">Awards</a></li>
+        <li>
+          <button
+            id="dropdownNavbarLink"
+            data-dropdown-toggle="dropdownNavbar"
+            class="flex items-center justify-between w-full py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+          >
+            Features
+            <svg
+              class="w-5 h-5 ml-1"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownNavbar"
+            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+          >
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-400"
+              aria-labelledby="dropdownLargeButton"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Disco Word</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/features/katakata.html"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >KATAKATA</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="w-full h-screen flex flex-col justify-center items-center gap-5"
+    >
+      <div
+        class="flex flex-col w-full h-screen justify-center items-center gap-5"
+        id="command"
+      >
+        <p class="text-2xl">Ini adalah halaman Disco Word</p>
+        <p class="text-2xl">Warna text berganti tiap 2 detik</p>
+        <button
+          class="bg-teal-500 text-white active:bg-teal-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button"
+          onclick="tampilText()"
+        >
+          Enjoy the moment
+        </button>
+      </div>
+      <div class="w-3/4 flex-col gap-10 items-center text-2xl" id="warna" style="display: none">
+        <p class="paragraf" id="gantiWarna1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quaerat
+          recusandae qui ullam eaque cumque ea fugit, debitis commodi ipsum illo
+          dolorum consequatur sed laudantium suscipit quis magni, maiores in?
+        </p>
+        <p class="paragraf" id="gantiWarna2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quaerat
+          recusandae qui ullam eaque cumque ea fugit, debitis commodi ipsum illo
+          dolorum consequatur sed laudantium suscipit quis magni, maiores in?
+        </p>
+        <p class="paragraf" id="gantiWarna3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quaerat
+          recusandae qui ullam eaque cumque ea fugit, debitis commodi ipsum illo
+          dolorum consequatur sed laudantium suscipit quis magni, maiores in?
+        </p>
+        <button
+          class="bg-teal-500 w-48 text-white active:bg-teal-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button"
+          onclick="refreshPage()"
+        >
+          Refresh Page
+        </button>
+      </div>
+    </div>
+    <script>
+      const warna = [
+        "red",
+        "orange",
+        "green",
+        "blue",
+        "brown",
+        "purple",
+        "gray",
+      ];
+      getRandomIndex = () => {
+        const min = 0;
+        const max = warna.length - 1;
+        const index = Math.floor(Math.random() * (max - min + 1)) + min;
+        return index;
+      };
+
+      const ganti1 = document.getElementById("gantiWarna1");
+      const ganti2 = document.getElementById("gantiWarna2");
+      const ganti3 = document.getElementById("gantiWarna3");
+      let indexWarna = 0;
+      const gantiWarna = () => {
+        ganti1.style.color = warna[getRandomIndex()];
+        ganti2.style.color = warna[getRandomIndex()];
+        ganti3.style.color = warna[getRandomIndex()];
+      };
+
+      const tampilText = () => {
+        const warna = document.getElementById("warna");
+        const textHilang = document.getElementById("command");
+        warna.style.display = "flex";
+        textHilang.style.display = 'none';
+      };
+
+      const refreshPage = () => {
+        location.reload();
+      }
+
+      setInterval(gantiWarna, 2000);
+    </script>
+  </body>
+  <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+</html>
